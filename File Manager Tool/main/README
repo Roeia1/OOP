@@ -1,0 +1,150 @@
+roeia1
+
+####File Description:####
+
+README - This file.
+
+MyFileScript.java - The main that manage the entire program.
+
+Parsing.java - In this class I divided the command file into sections.
+
+Section.java - In this class I implemented a section.
+
+Type2Exception.java - An exception that when it occur, the program notify with
+an error and exit.
+
+All.java - A filter with no condition.
+
+Between.java - A size filter that checks if its between 2 values.
+
+Contain.java - A name filter that checks if the file name contains the given
+string.
+
+Executable.java - A permission filter.
+
+FileName.java - A name filter that checks if the file name equals to the given
+string.
+
+Filter.java - An interface containing the common method isPass for each filter.
+
+FilterException.java - The common filter exception.
+
+FilterFactory.java - Creating the filter according to the command.
+
+GreaterThan.java - A size filter that checks if the file size bigger then the
+value given.
+
+Hidden.java - A permission filter.
+
+NameFilters.java - A common filter to all the filters that checks strings.
+
+Negative.java - A filter that negate a certain filter.
+
+PermissionException.java - A permission exception. not a "YES"/"NO" value.
+
+PermissionFilters.java - A common filter to all the filters that checks
+permissions.
+
+Prefix.java - A name filter that checks if the file name begin with a given
+string.
+
+SizeException.java - A size exception that gather all the exceptions in this
+subject.
+
+SizeFilters.java - A common filter to all the filters that checks sizes.
+
+SmallerThan.java - A size filter that checks if the file size smaller then the
+value given.
+
+Suffix.java - A name filter that checks if the file name end with a given
+string.
+
+ValueOutOfRangeException.java - A size exception that indicate the value
+is out of range.
+
+Writable.java - A permission filter.
+
+Abs.java - An order that arrange the files from a to z.
+
+BadOrderNameException.java - An order exception when the order name is not
+valid.
+
+Compare.java - An abstract class that all the orders inherit from and
+implements order, that have the sortby method.
+
+Order.java - An interface that has the methods sortby and compare.
+
+OrderException.java - A common order exception.
+
+OrderFactory.java - Creating the order according to the command.
+
+Reverse.java - An order that reverse a certain order.
+
+Size.java - An order that arrange the files by size.
+
+Type.java - And order that arrange the files by type from a to z.
+	
+####Design:####
+
+I implemented the file processing with the design from tirgul10.
+Also, I did hierarchy to the exceptions, filters and orders with inheritance
+so that when adding something when necessary wont be hard at all.
+The main method is first of all parsing the command file, dividing it into
+sections and then it print the errors for each section, making a list of the
+files that pass the current filter of the section and rearrange the list with
+the current order of the section.
+
+####Implementation Issues:#### 
+
+I handled the different errors with ease with inheritance.
+The type 1 errors I caught in the parsing phase and then i logged the warning
+line number, and the type 2 errors I caught in the main method and print error.
+Of course I created each of the errors in the right package that it belongs to.
+I used a linked list to sort my matched files, using a comparator.
+I chose this data structure because I figured it's easiest to add a matched
+file and to run on the entire list with a "for each" loop.
+I also made the All filter to be singleton because every object of him will
+be the same, so I limit him to be only one.
+
+####Answers to Questions:####
+
+Addressed all the questions in previous sections.
+
+####Source files:####
+
+README
+MyFileScript.java
+Parsing.java
+Section.java
+Type2Exception.java
+All.java
+Between.java
+Contain.java
+Executable.java
+FileName.java
+Filter.java
+FilterException.java
+FilterFactory.java
+GreaterThan.java
+Hidden.java
+NameFilters.java
+Negative.java
+PermissionException.java
+PermissionFilters.java
+Prefix.java
+SizeException.java
+SizeFilters.java
+SmallerThan.java
+Suffix.java
+ValueOutOfRangeException.java
+Writable.java
+Abs.java
+BadOrderNameException.java
+Compare.java
+Order.java
+OrderException.java
+OrderFactory.java
+Reverse.java
+Size.java
+Type.java
+
